@@ -19,15 +19,12 @@ USAGE
 As shell command
 ----------------
 
-mirroring http://site.to.mirroring /save/path/ depth
+mirroring http://site.to.mirroring /save/path/ proc_count
 
-    depth is optional, by default = infinity
+    proc_count is optional, by default = cpu_count * 2
 
 As python module
 ----------------
 
-from mirroring import Worker
-worker = Worker('http://site.to.mirroring', '/save/path', 10)
-worker.process()
-
-        10 - mirroring depth, by default = infinity
+from mirroring.main import run
+run('http://site.to.mirroring', '/save/path')
